@@ -1,0 +1,77 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #DFBD69;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .email-input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+        }
+
+        .submit-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #DFBD69;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Mojo International Consulting</h1>
+    <p>Enter your email address to receive updates:</p>
+    <div class="form-container">
+        <input type="email" id="email-input" class="email-input" placeholder="Enter your email address">
+        <button id="submit-btn" class="submit-btn">Subscribe</button>
+    </div>
+
+    <script>
+        // Get the input and button elements
+        var emailInput = document.getElementById('email-input');
+        var submitBtn = document.getElementById('submit-btn');
+
+        // Add event listener to the button
+        submitBtn.addEventListener('click', function() {
+            var email = emailInput.value;
+
+            // Validate the email address
+            if (validateEmail(email)) {
+                // Send the email address to your server for processing
+                // You can use AJAX or fetch to send the data to your server
+                console.log('Email address:', email);
+                alert('Thank you for subscribing!');
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+
+        // Validate email address using a simple regular expression
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>
+```
